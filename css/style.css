@@ -1,0 +1,792 @@
+/* 
+================================================
+================================================
+................. Color Palette ................
+------------------------------------------------
+ Background:   #ededed     Light neutral gray  
+ Surface:      #ffffff     Clean white
+ Text:         #171033     Deep purple-black 
+ Primary:      #5706C2     Vibrant purple
+ Accent:       #f3e308     Electric yellow
+================================================
+================================================
+*/
+
+
+/* 
+==================================
+......... 1. VARIABLES ...........
+================================== 
+CSS variables keep styling
+consistent and easy to update in one place.
+*/
+
+:root {
+  --rain: #ededed;    /* background color: Light Neutral Grey */
+  --snow: #ffffff;    /* surface color: Clean White */
+  --plum: #171033;    /* text color: Deep Purple-Black */
+  --grape: #5706c2;   /* primary color: Vibrant Purple */
+  --lemon: #f3e308;   /* accent color: Electric Yellow */
+
+  --font-basic: "Google Sans Flex", system-ui, sans-serif;   /* paragraph text: clean sans-serif stack */
+  --font-extra: "Montserrat", system-ui, sans-serif;         /* title text: geometric sans-serif stack */
+  --font-extra-settings: "slnt" 0, "wdth" 500, "GRAD" 0, "ROND" 0; /* font-variation-settings: slant, width, grade, and roundness axes for variable fonts */
+  --font-ultra: "Chango", system-ui, sans-serif;             /* headline text: vintage rounded sans-serif stack */
+}
+
+
+/* 
+==================================
+........ 2. BASE STYLES ..........
+================================== 
+*/
+
+/* *, *::before, *::after are universal selectors.
+This ruleset styles all elements on the page. 
+Padding and borders are added.
+*/
+*, *::before, *::after { box-sizing: border-box; }   /* padding and border no longer add to total width */
+
+/* body is an element selector.
+This ruleset styles the <body> element. Text is deep purple-black and the background is light grey. 
+Text uses the Inter font with increased line height for legibility. Default margins removed.
+*/
+body {
+  color: var(--plum);                            /* deep purple-black text */
+  background-color: var(--rain);                 /* light grey background */
+  line-height: 1.6em;                            /* more space between lines */
+  margin: 0;                                     /* removes default margins */
+}
+
+/* main is an element selector.
+This ruleset styles the <main> element. The background is light grey and text uses the Inter font. 
+Default margins are removed. 
+*/
+main {
+  font-family: "Inter", system-ui, sans-serif;   /* sets main font, backup font: system sans-serif  */
+  margin: 0;                                     /* removes default margins */
+}
+
+/* h1 is an element selector.
+This ruleset styles the <h1> element. Text is purple, centered, in a vintage rounded 
+headline font. Text scales via clamp().
+*/
+/* hero header */
+h1 {
+  color: var(--grape);                       /* purple text */
+  font-family: var(--font-ultra);            /* vintage rounded font for headline */
+  font-size: clamp(45px, 6vw, 110px);        /* fluid text sizing */
+  text-align: center;                        /* centers text horizontally */
+  font-weight: 500;                          /* medium font wieght */
+  margin: auto 0;                            /* no horizontal margins, center verticalls */
+  line-height: 1.5em;                        /* more space between lines */
+}
+
+/* h2 is an element selector.
+This ruleset styles the <h2> element. Text is yellow, centered, in a vintage rounded 
+headline font. Vertical padding is added and margins are removed. 
+Text scales via clamp().
+*/
+/* hero tagline */
+h2 {
+  display: block;                           
+  justify-self: center;                     /* centers element horizontally  */
+  color: var(--lemon);                      /* yellow text */
+  font-family: var(--font-ultra);           /* vintage rounded font for headline text */
+  font-size: clamp(40px, 2vw, 54px);        /* fluid text sizing */
+  font-weight: 500;                         /* medium font weight */
+  text-align: center;                       /* centers text horizontally */
+  padding: 20px 0;                          /* adds space above and below text */
+  margin: 0;                                /* removes default margins */
+}
+
+/* h3 is an element selector.
+This ruleset styles the <h3> element. Text is bold, purple, centered. 
+Padding and margins are removed. 
+Text scales via clamp().
+*/
+/* section headers */
+h3 {
+  display: block;                                       /* takes up the full width */
+  color: var(--grape);                                  /* purple text */
+  font-family: var(--font-extra);                       /* geometric sans-serif font */
+  font-variation-settings: var(--font-extra-settings);  /* estra font settings */
+  font-size: clamp(20px, 3vw, 24px);                    /* fluid text sizing */
+  font-weight: 700;                                     /* bold text */
+  text-align: center;                                   /* centers text horizontally */
+  padding: 0;                                           /* removes padding */
+  margin: 0;                                            /* removes margins */
+}
+
+/* h4 is an element selector.
+This ruleset styles the <h4> element. Text is semi-bold, purple, centered, in the basic 
+sans-serif font. Padding and margins are removed.
+*/
+/* card headers */
+h4 {
+  display: block;                   /* takes up the full width */
+  color: var(--grape);              /* purple text */
+  font-family: var(--font-basic);   /* clean sans-serif stack */
+  font-size: 20px;                  /* fixed text size */
+  font-weight: 600;                 /* semi-bold text */
+  text-align: center;               /* centers text horizontally */
+  padding: 0;                       /* removes padding */
+  margin: 0;                        /* removes margins */
+}
+
+/* p is an element selector.
+This ruleset styles the <p> element. Text is deep purple-black with increased line height. 
+Line length is capped for increased legibility. 
+Text scales via clamp().
+*/
+p {
+  color: var(--plum);                         /* deep purple-black text */
+  font-family: var(--font-basic);             /* clean sans-serif stack */
+  font-size: clamp(14px, 1.4vw, 18px);        /* fluid text sizing */
+  font-weight: 500;                           /* medium font weight */
+  line-height: 1.8em;                         /* more space between lines */
+  max-width: 65ch;                            /* max line length is 65 characters */
+}
+
+/* img is an element selector.
+This ruleset styles the <img> elements. Images scale to fit container.
+*/
+img { 
+  max-width: 100%;    /* image scales to fit container */
+  height: auto;       /* height adjusts to keep image proportional */
+  display: block;     /* image takes up a line */
+}
+
+/* .container is a class selector.
+This ruleset styles elements with the .container class. Content is centered horizontally with no 
+vertical margin.
+*/
+.container {
+    margin: 0 auto;  /* centers content horizontally */
+}
+
+
+
+/* ---- HEADER (Flexbox) ---- */
+
+/* header is an element selector.
+This ruleset styles the <header> element. Background is purple. The header stays at the top of the 
+page above other content when scrolling.
+*/
+header {
+    background-color: var(--grape);   /* purple background */
+    position: sticky; top: 0;         /* header stays visible while scrolling */
+    z-index: 1000;                    /* keeps header visible above other content */
+}
+
+/* .header-inner is a class selector.
+This ruleset formats the content inside the header. Content is displayed in a row, 
+with space between elements. Content has a maximum width, is centered on the page, 
+and has space around it.
+*/
+.header-inner {
+  display: flex;                    /* set container type to flex */
+  justify-content: space-between;   /* space between elements */
+  align-items: center;              /* vertically centers items in the container */
+  max-width: 1200px;                /* set maximum width of container */
+  margin: 0 auto;                   /* no vertical margin, centered horizontally */
+  padding: 14px 24px;               /* space inside the container */
+}
+
+/* .brand is a class selector.
+This ruleset styles the brand link. Text is light grey, in title font, with no underline. 
+Text scales via clamp().
+*/
+.brand {
+  text-decoration: none;                                /* no underline */
+  color: var(--rain);                                   /* light grey text */
+  font-family: var(--font-extra);                       /* geometric sans-serif font for titles */
+  font-variation-settings: var(--font-extra-settings);  /* variable font settings */
+  font-size: clamp(18px, 1.7vw, 24px);                  /* fluid text sizing */
+  font-weight: 400;                                     /* regular font weight */
+}
+
+/* .menu-toggle is a class selector.
+This ruleset styles the hamburger menu button. (The button is hidden by default. )
+Bars are stacked in a column and centered. The button has a purple background, rounded corners, 
+no border.
+*/
+.menu-toggle {
+  display: none;              /* sets display status to hidden */  /* hidden on desktop, shown at 767px and below */
+  flex-direction: column;     /* stacks bars vertically in a column */
+  justify-content: center;    /* centers bars vertically in the button */
+  align-items: center;        /* centers bars horizontally in the button */
+  gap: 5px;                   /* space between bars */
+  padding: 12px;              /* space between button edge and bars */
+  background-color: var(--grape);   /* purple background */
+  border: none;               /* no border */
+  border-radius: 8px;         /* rounded corners */
+  cursor: pointer;            /* pointer cursor */
+}
+
+/* .bar is a class selector.
+This ruleset styles a bar in the hamburger icon. 
+Short yellow line with rounded ends.
+*/
+.bar {
+  display: block;                   /* each bar has its own line */
+  width: 26px;                      /* bar length */
+  height: 3px;                      /* bar thickness */
+  background-color: var(--lemon);   /* yellow bar */
+  border-radius: 2px;               /* slightly rounded ends */
+}
+
+/* .primary-nav .navlinks is a descendant selector.
+This ruleset styles the navigation link list. Links are displayed in a row with space between them. 
+List bullets, margins, and padding are removed.
+*/
+.primary-nav .navlinks {  /* navigation container styling */
+  display: flex;          /* container type - flex */
+  gap: 24px;              /* space between nav links */
+  list-style: none;       /* no style on list */ 
+  margin: 0;              /* no margins */
+  padding: 0;             /* no padding */
+}
+
+/* .primary-nav a is a descendant selector.
+This ruleset styles the navigation links. Text is bold, yellow, in the title font, with no underline. 
+Text scales via clamp().
+*/
+.primary-nav a {                /* navigation link styles */
+  color: var(--lemon);                        /* yellow text */
+  font-family: var(--font-extra);             /* geometric sans-serif font for titles */
+  font-optical-sizing: auto;                  /* browser adjusts letter shapes to the text size */
+  font-weight: 700;           /* 1 to 1000 */  /* bold text */
+  font-style: normal;                         /* no italics */
+  font-size: clamp(18px, 1.7vw, 24px);        /* fluid text sizing */
+  font-variation-settings: var(--font-extra-settings);  /* variable font axis settings */
+  text-decoration: none;      /* no text decoration on links */
+}
+
+/* .primary-nav a:hover uses the :hover pseudoclass.
+This ruleset styles the navigation links when they are hovered over. 
+On mouse hover , the link text turns light grey.
+*/
+.primary-nav a:hover {
+    color: var(--rain);    /* light grey text */
+}
+
+/* .primary-nav a:active uses the :active pseudoclass.
+This ruleset styles the links when they are clicked. 
+On mouse click, the link text turns deep purple-black.
+*/
+.primary-nav a:active {
+    color: var(--plum);    /* deep purple-black text */
+}
+
+/* 
+==================================
+......... 5. SECTIONS ............
+================================== 
+*/
+
+/* ------- HERO ------- */
+
+/* .hero is a class selector.
+This ruleset styles the hero section. Content is stacked in a column and centered both horizontally and 
+vertically. The section is centered on the page.
+*/
+.hero {
+  min-height: 70vh;                 /* section is at least 70% of the height */
+  display: flex;                    /* set container type to flex */
+  flex-direction: column;           /* stacks items vertically in a column */
+  justify-content:center;           /* centers content vertically in the section */
+  align-items: center;              /* centers content horizontally in the section */
+  max-width: 1200px;                /* set maximum width of container */
+  margin: 0 auto;                   /* no vertical margin, horizontal centered */
+}
+
+/* .tagline is a class selector.
+This ruleset styles the hero tagline. Text is deep purple-black, medium weight, centered, in the title 
+font. 
+Text scales via clamp().
+*/
+.tagline{
+  color:  var(--plum);                        /* deep purple-black text */
+  font-family: var(--font-extra);             /* geometric sans-serif font for titles */
+  font-variation-settings: var(--font-extra-settings);   /* variable font axis settings */
+  font-size: clamp(20px, 2vw, 28px);        /* fluid text sizing */
+  font-weight: 500;                           /* medium font weight */
+  text-align: center;                         /* centers text horizontally */
+}
+
+/* .hero a is a descendant selector.
+This ruleset styles the hero link so it looks like a button. The button is yellow with deep purple-black 
+bold text, no underline, and rounded corners. 
+Text scales via clamp().
+*/
+.hero a {                /* navigation link styles */
+  display: flex;                    /* button is a flex container, sized to its content */
+  justify-self: center;             /* centers element horizontally when inside a grid container */
+  border: none;                     /* no border */
+  margin: auto 0;                   /* no horizontal margin, auto vertical margin */
+  background-color: var(--lemon);   /* yellow background */
+  color: var(--plum);               /* deep purple-black text */
+  font-family: var(--font-extra);   /* geometric sans-serif font for titles */
+  font-optical-sizing: auto;        /* browser adjusts letter shapes to the text size */
+  font-weight: 700;           /* 1 to 1000 */  /* bold text */
+  font-style: normal;               /* no italics */
+  font-size: clamp(18px, 2vw, 28px);        /* fluid text sizing */
+  font-variation-settings: var(--font-extra-settings);   /* variable font axis settings */
+  padding: 12px 24px;               /* space between button edge and link text */
+  text-decoration: none;              /* no text decoration on links */
+  border-radius: 16px 16px 16px 0;    /* rounded corners, bottom left corner square */
+}
+
+/* .hero a:hover uses the :hover pseudoclass.
+This ruleset styles the hero button when it is hovered over. 
+On mouse hover, the button turns purple with light grey text.
+*/
+.hero a:hover {
+  background-color: var(--grape);   /* purple background */
+  color: var(--rain)                /* light grey text */
+}
+
+/* .hero a:active uses the :active pseudoclass.
+This ruleset styles the hero button when it is clicked. 
+On mouse click, the button stays purple and the text turns yellow.
+*/
+.hero a:active {
+  background-color: var(--grape);   /* purple background */
+  color: var(--lemon)               /* yellow text */
+}
+
+
+/* ---- ABOUT (Grid 2-column) ---- */
+
+/* .about-section is a class selector.
+This ruleset styles the About Me section. The section spans the full width, has a light grey background, 
+and space below the content.
+*/
+.about-section {
+  max-width: 100%;                  /* section spans the full width */
+  margin: 0;                        /* removes margins */
+  background-color: var(--rain);    /* light grey background */
+  padding: 0 0 30px 0;              /* adds space below content */
+}
+
+/* .about is a class selector.
+This ruleset formats the About Me layout. Content is displayed in a grid with a single column on mobile. 
+Content has a maximum width and is centered on the page.
+*/
+.about {
+  display: grid;                 /* formats content in a grid */
+  grid-template-columns: 1fr; /*  grid-template-columns: 2fr 1fr; */  /* MOBILE FIRST: single column */  /* the 2fr 1fr layout in the comment is applied at 768px and up (see DESKTOP media query) */
+  gap: 24px;                     /* even spacing between grid items */
+  max-width: 1100px;             /* set maximum width of container */
+  margin: 0 auto;                /* centers content horizontally */
+}
+
+/* .about p is a descendant selector.
+This ruleset styles paragraph text inside the About Me grid. Text is vertically centered in its grid cell.
+*/
+.about p {
+  margin: auto 0;    /* no horizontal margin, auto vertical margin centers text in grid cell */
+}
+
+
+
+/* ---- SKILLS (auto-fit Grid) ---- */
+
+/* .skills-section is a class selector.
+This ruleset styles the Skills section. The section spans the full width, has a purple background, 
+and space above and below the content.
+*/
+.skills-section {
+  background-color: var(--grape);   /* purple background */
+  margin: 0;                        /* removes margins */
+  max-width: 100%;                  /* section spans the full width */
+  padding: 30px 0;                  /* adds space above and below content */
+}
+
+
+/* .skills-gallery is a class selector.
+This ruleset formats the skills gallery layout. Skill cards are displayed in a grid that fits as many 
+columns as possible, each at least 200px wide. The gallery has a maximum width and is centered on the page. 
+List bullets are removed. Gap scales via clamp().
+*/
+.skills-gallery {
+  margin: 0 auto;                   /* centers gallery horizontally */
+  max-width: 1100px;                /* set maximum width of container */
+  display: grid;                    /* formats cards in a grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));   /* as many columns as fit, each at least 200px wide */
+  gap: clamp(20px, 1vw, 26px);      /* fluid spacing between cards */
+  list-style: none;                 /* no style on list */
+  padding: 24px;                    /* space inside the gallery */
+}
+
+/* .skill-card is a class selector.
+This ruleset styles a skill card. The card has a near-white background, rounded corners, and a subtle 
+drop shadow. Contents are vertically centered. Padding scales via clamp().
+*/
+.skill-card {
+  display: block;                   /* card takes up the full width available */
+  align-content: center;            /* centers card contents vertically */
+  margin: 0;                        /* removes margins */
+  border-radius: 20px;              /* rounded corners */
+  overflow: hidden;                 /* anything extending past the rounded corners is clipped */
+  background-color: #fafbfc;        /* near-white background */
+  box-shadow: 0 2px 6px rgba(11, 61, 145, 0.06);   /* subtle blue-tinted shadow */
+  padding: clamp(18px, 2vw, 40px);  /* fluid padding around content */
+}
+
+/* .icon is a class selector.
+This ruleset styles a skill icon. The icon is small, centered, and has a small space below it.
+*/
+.icon {
+  max-width: 30px;         /* keeps icon small */
+  height: auto;            /* height adjusts to keep image proportions */
+  object-fit: cover;       /* image fills its box and is cropped if needed */
+  display: block;          /* icon sits on its own line */
+  justify-self: center;    /* centers icon horizontally when inside a grid container */
+  margin-bottom: 10px;     /* adds small space below icon */
+}
+
+/* .skills-section p is a descendant selector.
+This ruleset styles paragraph text in the Skills section. Text is small and centered. Text scales via clamp().
+*/
+.skills-section p {
+  font-size: clamp(12px, 0.7vw, 14px);   /* fluid text sizing */
+  text-align: center;                    /* centers text horizontally */
+}
+
+
+/* ---- PROJECTS (auto-fit Grid) ---- */
+
+/* .projects-section is a class selector.
+This ruleset styles the Projects section. The section spans the full width, has a yellow background, 
+and space above and below the content.
+*/
+.projects-section {
+  background-color: var(--lemon);   /* yellow background */
+  margin: 0;                        /* removes margins */
+  padding: 30px 0;                  /* adds space above and below content */
+  max-width: 100%;                  /* section spans the full width */
+}
+
+/* .projects-section h2 is a descendant selector.
+This ruleset styles the <h2> header inside the Projects section. Text is purple so it stands out 
+against the yellow background.
+*/
+.projects-section h2 {
+  color: var(--grape);    /* purple text */
+}
+
+/* .projects-gallery is a class selector.
+This ruleset formats the projects gallery layout. Project cards are displayed in a grid that fits as many 
+columns as possible, each at least 280px wide. The gallery has a maximum width and is centered on the page. 
+List bullets are removed. Gap scales via clamp().
+*/
+.projects-gallery {
+  max-width: 1100px;                /* set maximum width of container */
+  display: grid;                    /* formats cards in a grid */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));   /* as many columns as fit, each at least 280px wide */
+  gap: clamp(20px, 1vw, 26px);      /* fluid spacing between cards */
+  list-style: none;                 /* no style on list */
+  padding: 20px 24px;               /* space inside the gallery */
+  margin: 0 auto;                   /* centers gallery horizontally */
+}
+
+/* .project-card is a class selector.
+This ruleset styles a project card. The card has a near-white background, rounded corners, and a subtle 
+drop shadow. Text is centered. Padding scales via clamp().
+*/
+.project-card {
+  display: block;                   /* card takes up the full width available */
+  margin: 0;                        /* removes margins */
+  border-radius: 20px;              /* rounded corners */
+  overflow: hidden;                 /* anything extending past the rounded corners is clipped */
+  background-color: #fafbfc;        /* near-white background */
+  box-shadow: 0 2px 6px rgba(11, 61, 145, 0.06);   /* subtle blue-tinted shadow */
+  padding: clamp(18px, 2vw, 40px);  /* fluid padding around content */
+  text-align: center;               /* centers text horizontally */
+}
+
+/* .thumbnail is a class selector.
+This ruleset styles a project thumbnail image. The image is limited in width, has rounded corners, is 
+centered, and has a small space below it.
+*/
+.thumbnail {
+  max-width: 200px;        /* keeps thumbnail from getting too large */
+  height: auto;            /* height adjusts to keep image proportions */
+  object-fit: cover;       /* image fills its box and is cropped if needed */
+  display: block;          /* image sits on its own line */
+  border-radius: 20px;     /* rounded corners */
+  justify-self: center;    /* centers image horizontally when inside a grid container */
+  margin-bottom: 10px;     /* adds small space below image */
+}
+
+/* .project-card p is a descendant selector.
+This ruleset styles paragraph text in a project card. Text is centered. Text scales via clamp().
+*/
+.project-card p {
+  font-size: clamp(12px, 0.7vw, 14px);   /* fluid text sizing */
+  text-align: center;                    /* centers text horizontally */
+}
+
+/* .project-card a is a descendant selector.
+This ruleset styles the project links. Text is bold, purple, uppercase, in the basic sans-serif font. 
+Text scales via clamp().
+*/
+.project-card a {                
+  color: var(--grape);                        /* purple text */
+  font-family: var(--font-basic);             /* clean sans-serif stack */
+  font-optical-sizing: auto;                  /* browser adjusts letter shapes to the text size */
+  font-weight: 700;           /* 1 to 1000 */  /* bold text */
+  font-style: normal;                         /* no italics */
+  font-size: clamp(14px, 1.5vw, 16px);        /* fluid text sizing */
+  font-variation-settings: var(--font-extra-settings);   /* variable font axis settings */
+  text-transform: uppercase;                  /* text converted to uppercase */
+}
+
+/* .project-card a:hover uses the :hover pseudoclass.
+This ruleset styles the project links when they are hovered over. 
+On mouse hover, the link text turns deep purple-black.
+*/
+.project-card a:hover {
+    color: var(--plum);    /* deep purple-black text */
+}
+
+/* .project-card a:active uses the :active pseudoclass.
+This ruleset styles the project links when they are clicked. 
+On mouse click, the link text turns yellow.
+*/
+.project-card a:active {
+    color: var(--lemon);    /* yellow text */
+}
+
+
+/* ---- FOOTER (Contact) ---- */
+
+/* footer is an element selector.
+This ruleset styles the <footer> element. Margins are removed and the footer spans the full width.
+*/
+footer {
+  margin: 0;           /* removes margins */
+  max-width: 100%;     /* footer spans the full width */
+}
+
+/* .footer-contact is a class selector.
+This ruleset formats the footer contact links. Items are displayed in a single row, centered, with a 
+small space between them and space above and below.
+*/
+.footer-contact {  
+  margin: 0 auto;           /* centers content horizontally */
+  display: flex;            /* set container type to flex */
+  flex-direction: row;      /* items are arranged in a row */
+  gap: 5px;              /* space between nav links */  /* space between footer items */
+  flex-flow: nowrap;        /* items stay on one line and do not wrap */ 
+  justify-content: center;  /* centers items horizontally */
+  align-content: center;    /* centers items vertically */
+  padding: 30px 0;          /* adds space above and below content */
+}
+
+/* .footer-email is a class selector.
+This ruleset styles the footer email text. Text is bold, in the vintage rounded headline font, with no 
+underline. Text scales via clamp().
+*/
+.footer-email {
+  text-decoration: none;                      /* no underline */
+  font-family: var(--font-ultra);             /* vintage rounded font for headline text */
+  font-optical-sizing: auto;                  /* browser adjusts letter shapes to the text size */
+  font-weight: 700;           /* 1 to 1000 */  /* bold text */
+  font-style: normal;                         /* no italics */
+  font-size: clamp(21px, 2vw, 40px);;         /* fluid text sizing */
+  margin: auto 10px;                          /* auto vertical margin, small horizontal margin */
+}
+
+/* .footer-contact a is a descendant selector.
+This ruleset styles the footer links. Text is purple, with space around each link.
+*/
+.footer-contact a {
+  color: var(--grape);    /* purple text */
+  padding: 15px;          /* space around link content */
+}
+
+/* .footer-contact a:hover uses the :hover pseudoclass.
+This ruleset styles the footer links when they are hovered over. 
+On mouse hover, the link's background turns yellow.
+*/
+.footer-contact a:hover {
+  background-color: var(--lemon);   /* yellow background */
+}
+
+/* .footer-contact a:active uses the :active pseudoclass.
+This ruleset styles the footer links when they are clicked. 
+On mouse click, the link's background turns purple and the text turns light grey.
+*/
+.footer-contact a:active {
+  color: var(--rain);               /* light grey text */
+  background-color: var(--grape);   /* purple background */
+}
+
+/* .footer-icon is a class selector.
+This ruleset styles the footer icon. The icon sits on its own line, is limited in width, and has no margin.
+*/
+.footer-icon {   
+  display: block;          /* icon sits on its own line */
+  max-width: 40px;         /* keeps icon small */
+  margin:0;                /* removes margins */
+}
+
+/* .footer-boilerplate is a class selector.
+This ruleset formats the footer boilerplate text container. Content is stacked in a column, centered, 
+with a maximum width and space on either side.
+*/
+.footer-boilerplate { 
+  display: flex;                    /* set container type to flex */
+  flex-direction: column;           /* stacks items vertically in a column */
+  justify-self: center;             /* centers container horizontally when inside a grid container */
+  align-content: space-around;      /* even spacing around items */
+  max-width: 500px;                 /* set maximum width of container */
+  text-align: center;               /* centers text horizontally */
+  margin: 0 30px;                   /* no vertical margin, space on either side */
+}
+
+/* .footer-boilerplate p is a descendant selector.
+This ruleset styles paragraph text in the footer boilerplate. Text is centered, with a small margin above 
+and below and tighter line height. Text scales via clamp().
+*/
+.footer-boilerplate p { 
+  text-align: center;      /* centers text horizontally */
+  margin: 5px 0;           /* small space above and below text */
+  font-size: clamp(14px, 1vw, 16px);   /* fluid text sizing */
+  line-height: 1.4em;      /* tighter spacing between lines */
+}
+
+
+/* ---- FOCUS-VISIBLE for accessibility ---- */
+
+/* :focus-visible is a pseudoclass selector.
+This ruleset highlights tabbed elements. A pink outline is added around 
+the element. Improves site accessibility.
+*/
+:focus-visible {
+  outline: 3px solid #eb00df;    /* pink outline */  
+  outline-offset: 3px;           /* leaves space between element and outline */
+}
+
+
+/* ---- MOBILE ---- */
+
+/* @media is a media query.
+These styles are used when the window is 767px wide or narrower.
+About Me paragraph text gets a horizontal margin, and the navigation turns into a hamburger menu.
+*/
+@media (max-width: 767px) {
+  .about p {
+    margin: auto 20px;}    /* auto vertical margin, 20px horizontal margin so text doesn't touch the screen edges */
+
+
+/* ---- MOBILE NAV ---- */
+  /* 1. Show the hamburger */
+  /* .menu-toggle is a class selector.
+  This ruleset shows the hamburger button on mobile. It overrides the display: none set earlier.
+  */
+  .menu-toggle {
+    display: inline-flex;            /* display type flexbox, inline (rows) */  /* button is now visible */
+    position: relative;              /* position relative to another element */  /* lets z-index take effect */
+    z-index: 700;                    /* always above the drawer */
+  }
+
+  /* 2. The drawer — anchored to the RIGHT edge */
+  /* .primary-nav is a class selector.
+  This ruleset turns the navigation into a drawer. The drawer is fixed to the right edge of the viewport, 
+  full height, and starts off-screen. It has a purple background, a left border, and a shadow. 
+  */
+  .primary-nav {
+    position: fixed;                 /* fixes container to right side of viewport */
+    top: 0;                          /* top */  /* drawer starts at the top of the viewport */
+    right: 0;                        /* <-- right side, not left */
+    bottom: 0;                       /* drawer ends at the bottom of the viewport, so it is full height */
+    width: 300px;                    /* width of drawer container */
+    max-width: 85vw;                 /* never wider than the screen */  
+    background-color: var(--grape);  /* purple background */    
+    border-left: 1px solid #e4e7eb;  /* thin light grey line along the drawer's left edge */ 
+    box-shadow: -12px 0 28px rgba(11, 61, 145, 0.18);  /* adds shadow behind drawer */
+    transform: translateX(100%);     /* off-screen by default */  /* moves the drawer right by its own width */
+    transition: transform 0.28s ease;    /* transformation specs, move left/right , .28 second duration, ease in/out */  /* why is this better here and not in menu-open? */
+    z-index: 500;                    /* placement on z-axis */
+    overflow-y: auto;                /* vertical overflow text set to auto */  /* adds a scrollbar if links are taller than the screen */
+  }
+
+  /* 3. The OPEN state: slide it into view */
+  /* body.menu-open .primary-nav is a descendant selector.
+  This ruleset styles the drawer when the menu is open. The drawer slides into view.
+  */
+  body.menu-open .primary-nav {      /* FROM JAVASCRIPT: document.body.classList.toggle('menu-open', open); */
+    transform: translateX(0);        /* no offset: drawer sits at the right edge of the screen */  
+  }
+
+  /* 4. Stack the links vertically inside the drawer */
+  /* .primary-nav .navlinks is a descendant selector.
+  This ruleset stacks the navigation links in a column inside the drawer, with no gap between them 
+  and extra padding at the top. It overrides the row layout used on desktop.
+  */
+  .primary-nav .navlinks {
+    flex-direction: column;          /* stack in a column */
+    gap: 0;                          /* no space bewteen */
+    padding: 80px 0 24px;            /* room for the close button */
+  }
+
+  /* .primary-nav a is a descendant selector.
+  This ruleset styles the navigation links inside the drawer. Each link fills the full drawer width, 
+  with space around the text and a line above it so the links look like buttons.
+  */
+  .primary-nav a {       /* navigation link styling */ /* mobile only */
+    display: block;      /* display in block */  /* link fills the full width of the drawer */
+    padding: 14px 24px;  /* padding around links */
+    border-top: 1px solid #f1f3f5;   /* border above links so they look like buttons */
+  }
+
+  /* 5. The dim backdrop */
+  /* .nav-backdrop is a class selector.
+  This ruleset styles the dim backdrop behind the open drawer. It covers the whole viewport and stays 
+  in place while scrolling. It is styled only here, so it is used only if a .nav-backdrop element is added 
+  to the page (for example, by JavaScript).
+  */
+  .nav-backdrop {    /* acts as a button to close the hamburger menu if you click elsewhere on the page */
+    position: fixed;  /* doesn't move when scrolling */
+    inset: 0;   /* what does this do? not sure */
+    background-color: rgba(15, 23, 42, 0.5);  /* set hambruger menu background color, 50% transparency */
+    z-index: 200;  /* placement on z-axis */
+  }
+
+  /* 6. Stop the page scrolling while the drawer is open */
+  /* body.menu-open is a class selector joined to an element selector.
+  This ruleset styles the <body> when the menu is open. Page scrolling is  off.
+  */
+  body.menu-open { overflow: hidden;   /* cuts content below page bottom, pretends like it doesn't exist */
+  }
+}
+
+/* ---- DESKTOP ---- */
+/* @media is a media query.
+These styles are used when the viewport is at least 768px wide.
+The About Me section is displayed in two columns, with the text column twice as wide as the image column.
+*/
+@media (min-width: 768px) { 
+  .about { 
+    grid-template-columns: 2fr 1fr;    /* 2 columns, the first twice as wide as the second */
+  } 
+  .about p {
+    margin: auto 20px;    /* auto vertical margin, 20px horizontal margin */
+  }
+}
+
+/* ---- REDUCED MOTION ---- */
+/* prefers-reduced-motion is a media feature.
+These styles are used when a device uses to reduce motion. 
+Improves site accessibility.
+*/
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;     /* animations finish almost instantly */  /* !important overrides other animation settings */
+    transition-duration: 0.01ms !important;    /* transitions finish almost instantly */  /* !important overrides other transition settings */
+  }
+}

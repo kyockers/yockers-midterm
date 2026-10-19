@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+The <head> element contains information used by the browser.
+This section sets character encoding, sets display and device width, adds a page title, and links to 
+the external Google fonts and CSS stylesheet.
+<meta charset="UTF-8"> sets character encoding for the page.
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> sets device width for media queries.
+<title>...</title> adds page title content.
+<link rel="stylesheet" href="css/temp-style.css"> links to the external CSS stylesheet.
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kimberley Yockers</title>
+
+<!--- GOOGLE FONTS ---
+These links load the web fonts used by the stylesheet (Chango, Google Sans Flex, Inter, and Montserrat).
+-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chango&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<!-- 
+The <body> element contains the webpage's visible content.
+The <main> element contains the webpage's main content.
+This section creates the <body> and <main> elements, and assigns the class "container" to <main>. 
+<main id="top" class="container">  Creates a back-to-top link and assigns the "container" class to <main>.
+-->
+<body>
+  <main id="top" class="container">
+
+<!-- NAVIGATION SECTION -->
+<!--
+The <header> element contains the site's brand and navigation links.
+The <div> element groups the brand and navigation elements.
+The <a> element contains the back-to-top link.
+The <nav> element contains the main navigation links.
+Each <li> element contains one navigation link.
+This section creates a sticky haeder with the brand on the left and navigation on the right. 
+Each navigation link jumps to a #section on the current page.
+<header class="site-header">  Assigns the "site-header" class to <header>.
+<div class="header-inner">  Assigns the "header-inner" class <div>.
+<a href="#top" class="brand">  Assigns the "brand" class to the brand link and links to the top of the page.
+<nav ... aria-label="Primary navigation">  Labels navigation for screen readers. Improves site accessibility.
+<ul class="navlinks">  Assigns the "navlinks" class to the navigation links list.
+-->
+    <header class="site-header">  
+      <div class="header-inner">
+        <a href="#top" class="brand">Kim Yockers</a> <!-- link as "back to top" point -->
+
+        <!-- begin hamburger menu button -->
+        <!-- create hamburger menu container. set initial states for aria-expanded, aria-controls, aria-label. create a little button using three empty span classes.-->
+        <button type="button" class="menu-toggle"
+                aria-expanded="false" aria-controls="primary-nav"
+                aria-label="Open menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <!-- end hamburger menu button-->
+
+        <!-- begin navigation menu -->
+        <!-- create navigation links container -->
+        <!-- assign class style to navigation links -->
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">  
+          <ul class="navlinks"> 
+            <!-- list items --> 
+            <li><a href="#about">About</a></li>         <!-- jump to About section -->
+            <li><a href="#skills">Skills</a></li>       <!-- jump to Skills section -->
+            <li><a href="#projects">Projects</a></li>   <!-- jump to Projects section -->
+            <li><a href="#footer">Contact</a></li>      <!-- jump to Contact section (footer) -->
+            <!-- end list items -->
+          </ul>
+        </nav>
+        <!-- end nav menu -->
+      </div>
+    </header>
+    <div class="nav-backdrop" hidden></div>
+
+<!-- HERO SECTION -->
+<!--
+The <section> element contains the page's hero content.
+The <h1> element contains the page's headline te3xt.
+The <p> element contains the tagline text.
+The <a> element contains the call-to-action link.
+This section creates the hero container, headline, tagline, and call-to-action link, and assigns them classes. 
+Headline and tagline text is added. The link jumps to the "Projects" section.
+<section class="hero">  Assigns the "hero" class to <section>.
+<p class="tagline">  Assigns the "tagline" class to the tagline text.
+<a href="#projects" class="hero-btn">  Links to the Projects section and sssigns the "hero-btn" class to link. 
+-->
+    <section class="hero">
+      <h1>Kimberley<br>Yockers</h1>
+      <p class="tagline">Graphic Design and Web Development</p>
+      <!-- CALL TO ACTION button-->
+       <a href="#projects" class="hero-btn">View my work</a>
+    </section> 
+
+
+<!-- ABOUT ME SECTION -->
+<!--
+The <section> element contains the About Me content.
+The <div> element is the grid that holds the image and bio text.
+The <img> element contains the About Me image.
+The <p> element contains the bio text.
+This section creates the About Me container, grid, image, and bio paragraph, and assigns each a class. 
+The image has descriptive alt text for screen readers.
+<section id="about" class="about-section">  Assigns the id "about" and the "about-section" class.
+<div class="about">  Assigns the "about" class to the grid container.
+<img src="..." class="img-about" alt="...">  Assigns the "img-about" class to the image. alt text describes the image for screen readers. Improves site accessibility.
+-->
+    <section id="about" class="about-section">
+      <div class="about">
+      <!-- AI-assisted asset -->
+      <img src="images/aboutme/about-me.jpg" class="img-about" alt="Digital-collage-style image of a 
+      happy woman with curly hair sitting at a laptop and surrounded by cats, books, and art supplies 
+      in bright purples and yellow"> 
+      <p>Creative. Detail-oriented. Customer focused. And an all-around super human being, who knows when 
+      to be professional and when to bring the fun. “A delight to work with!” says everyone. I enjoy 
+      combining art and structure to turn out a product that is technically precise and eye-catching. 
+      I'm a die-hard perfectionist with a keen eye for detail, a strong sense of whimsy, and a BA in 
+      fine art and graphic design. Web design is my newest passion, so I'm back in school for another degree! 
+      I'll be completing my studies at NOVA in the coming year.
+      <br><br>
+      I love cats, playing music, hiking, mystery novels, horror movies, karaoke, and ice cream.</p>
+      </div>
+    </section>
+
+
+<!-- SKILLS SECTION -->
+<!--
+The <section> element contains the skills gallery.
+The <h2> element contains the section's header.
+The <div> element is the grid that holds the skill cards gallery.
+Each <article> element contains one skill card.
+Each <img> element contains a skill's icon.
+Each <h3> element contains a skill's name.
+Each <p> element contains a skill's description.
+This section creates the skills container, header, gallery grid, and six skill cards, and assigns them all classes. 
+Each card contains an icon, a skill name, and a short description.
+<section id="skills" class="skills-section">  Assigns the id "skills" and the "skills-section" classs.
+<div class="skills-gallery">  Assigns the "skills-gallery" class to the container.
+<article class="skill-card">  Assigns the "skill-card" class to each card.
+<img src"..." class="icon" alt="...">  Assigns the "icon" class to the icon. alt text describes the icon for screen readers. Improves site accessibility.
+-->
+    <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+
+      <div class="skills-gallery">
+
+        <article class="skill-card">
+          <img src="images/skills/1-web-icon.png" class="icon" alt="cartoon-style browser window icon in purple and yellow"> 
+          <h3>Web Development & Programming</h3>
+          <p>HTML, CSS, SQL, Python</p>
+        </article>
+        
+        <article class="skill-card">
+          <img src="images/skills/2-design-icon.png" class="icon" alt="cartoon-style computer monitor in purple and yellow"> 
+          <h3>Graphic Design</h3>
+          <p>Adobe CS, Canva</p> 
+        </article>
+
+        <article class="skill-card">
+          <img src="images/skills/3-visual-art-icon.png" class="icon" alt="cartoon-style paint tube in purple and yellow"> 
+          <h3>Visual Art</h3>
+          <p>painting & illustration</p> 
+        </article>
+
+        <article class="skill-card">
+          <img src="images/skills/4-ai-icon.png" class="icon" alt="cartoon-style talk balloon in purple and yellow"> 
+          <h3>Generative AI<br>Workflows</h3>
+          <p>Content creation, prototyping</p> 
+        </article>
+
+        <article class="skill-card">
+          <img src="images/skills/5-presentation-icon.png" class="icon" alt="cartoon-style slideshow screen in purple and yellow"> 
+          <h3>Presentation Design</h3>
+          <p>PowerPoint, Keynote</p> 
+        </article>
+
+        <article class="skill-card">
+          <img src="images/skills/6-GIS-icon.png" class="icon" alt="cartoon-style gps icon in purple and yellow"> 
+          <h3>Geospatial<br>Systems</h3>
+          <p>ArcGIS</p>
+        </article>
+
+      </div>
+    </section>
+
+
+
+<!-- PROJECTS SECTION -->
+<!--
+The <section> element contains the Projects gallery.
+The <h3> element contains the section's header.
+The <div> element is the grid that holds the project cards.
+Each <article> element contains a project card.
+Each <img> element contains a project's thumbnail image.
+Each <h4> element contains a project's title.
+Each <p> element contains a project's description.
+Each <a> element contains an external link to the project.
+This section creates the projects container, header, gallery grid, and three project cards, and assigns them classes. 
+Each card contains a thumbnail, a project title, a short description, and a link to the project.
+<section id="projects" class="projects-section">  Assigns the id "projects" (the navigation link target) and the "projects-section" class.
+<div class="projects-gallery">  Assigns the "projects-gallery" class to the grid container.
+<article class="project-card">  Assigns the "project-card" class to each card.
+<img src="..." class="thumbnail" alt="...">  Assigns "thumbnail" class to the image. Alt text describes the image for screen readers. Improves site accessibility.
+target="new"  Opens the link in a new window.
+-->
+    <section id="projects" class="projects-section">
+      <h2>Projects</h2>
+
+      <div class="projects-gallery"> 
+        <article class="project-card">
+          <img src="images/projects/discount-bats.jpg" class="thumbnail" alt="Black and white image of stylized text reading Discount Bats, surrounded by flying cartoon bats">
+          <h4>AI-Assisted Design</h4>
+          <p>AI-assisted content generation/layout.</p>
+          <a href="https://kyockers.github.io/yockers-ai-mini/" target="new">View Discount Bats!</a> 
+        </article>
+
+        <article class="project-card">
+          <img src="images/projects/cactus-boat.png" class="thumbnail" alt="Large text reading Cactus Boat over a simple green and blue background">
+          <h4>Mobile-First Layout</h4>
+          <p>Responsive layout with three breakpoints.</p>
+          <a href="https://kyockers.github.io/rwd-yockers/">View Cactusboat</a> 
+        </article>
+
+        <article class="project-card">
+          <img src="images/projects/watercolor-duck.png" class="thumbnail" alt="Watercolor painting of a duck decoy in browns and blues">
+          <h4>CSS Grid Gallery</h4>
+          <p>Responsive sizing using media queries.</p>
+          <a href="https://kyockers.github.io/yockers-grid/">View Watercolor Portfolio</a> 
+        </article>
+
+      </div>
+    </section>
+
+        
+<!-- FOOTER: CONTACT SECTION -->
+<!--
+The <footer> element contains the page's contact link, social media links, copyright, and AI disclosure.
+The first <div> element holds the email and social media links.
+The second <div> element holds the copyright line and AI disclosure statement.
+Each <a> element contains a contact link.
+Each <img> element contains a social media logo.
+The <p> elements contain the copyright and AI disclosure statement.
+This section creates the footer, contact links, and boilerplate <p> text, and assigns them classes. 
+<footer id="footer">  Assigns the id "footer" to <footer>.
+<div class="footer-contact">  Assigns the "footer-contact" class to the container.
+<a href="mailto:..." class="footer-email">  Assigns the "footer-email" class to the email link. 
+<a ... aria-label="github">  Adds link information for screen readers to improve accessibility.
+<img src="..." class="footer-icon" alt="...">  Assigns the "footer-icon" class to the logos.Alt text describes the logo for screen readers.
+<div class="footer-boilerplate">  Assigns the "footer-boilerplate" class to the container.
+-->
+    <footer id="footer">
+    <div class="footer-contact"> 
+      <a href="mailto:ky86023@email.vccs.edu" class="footer-email">email me!</a> 
+      <a href="https://github.com/kyockers" target="new" aria-label="github"><img src="images/footer/github-logo.png" class="footer-icon" alt="GitHub logo"></a> 
+      <a href="https://www.linkedin.com/in/kyockers/" target="new" aria-label="linked-in"><img src="images/footer/linkedin-logo.png" class="footer-icon" alt="LinkedIn logo"></a>
+    </div>
+    <div class="footer-boilerplate"> 
+      <p>&copy; 2026 Kimberley Yockers</p>
+      <p>AI Disclosure statement:<br>About Me image was created using ChatGPT by OpenAI.</p>
+    </div>
+    </footer>
+
+  </main>
+
+<!-- JAVASCRIPT -->
+<!--
+The <script> element link to the javascript file.
+This section links to and runs the javascipt controlling the hamburger memu.
+<script src="js/script.js"></script> opens and runs the javascript file.
+-->
+  <script src="js/script.js"></script>  
+
+</body>
+</html>
